@@ -293,6 +293,31 @@
 .stc-page .intro-aside{position:relative}
 .stc-page .intro-aside .eyebrow{margin-bottom:12px}
 .stc-page .intro-aside h2{font-size:clamp(1.5rem,1.1rem+1.5vw,2rem)}
+.stc-page .intro-image{
+  position:relative;
+  margin-top:24px;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid #E8E5E0;
+  box-shadow:0 4px 12px rgba(26,26,26,.08), 0 24px 56px rgba(26,26,26,.10);
+  aspect-ratio:4/3;
+  background:#F7F4EE;
+}
+.stc-page .intro-image::before{
+  content:"";
+  position:absolute;
+  top:0; left:30px; right:30px;
+  height:4px;
+  background:#9E6D2D;
+  border-radius:0 0 4px 4px;
+  z-index:2;
+}
+.stc-page .intro-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
 .stc-page .intro-body p{margin-bottom:18px;color:#4A4A4A}
 .stc-page .intro-body p:last-child{margin-bottom:0}
 .stc-page .intro-callout{
@@ -356,8 +381,25 @@
   flex-shrink:0;
   min-height:auto;
 }
+/* Mobile: always visible (existing behavior preserved). */
+/* Desktop: hidden by default — JS adds .is-visible after the hero scrolls past. */
 @media(min-width:1024px){
-.stc-page .mobile-cta{display:none}
+.stc-page .mobile-cta{
+  display:flex;
+  max-width:560px;
+  left:50%;
+  right:auto;
+  transform:translate(-50%, 120%);
+  opacity:0;
+  pointer-events:none;
+  transition:transform .35s ease, opacity .35s ease;
+  border-radius:14px 14px 0 0;
+}
+.stc-page .mobile-cta.is-visible{
+  transform:translate(-50%, 0);
+  opacity:1;
+  pointer-events:auto;
+}
 }
 
 /* ============================================================
@@ -1008,6 +1050,9 @@
     <div class="intro-aside reveal">
       <span class="eyebrow">Forward-Looking</span>
       <h2>Move Beyond Annual Tax Compliance.</h2>
+      <figure class="intro-image">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80" alt="Strategic financial planning and tax roadmap analysis" loading="lazy" decoding="async">
+      </figure>
     </div>
     <div class="intro-body reveal">
       <p>Annual tax compliance looks backwards. A tax return records what happened during the previous financial year. A strategic tax consultation considers what should happen <em>next</em> — covering income tax, capital gains, asset protection, business structure, investment ownership, SMSF compliance and future wealth transfer.</p>
@@ -1349,9 +1394,9 @@
       <h2>Your <span class="accent">Financial Future</span>, On Paper.</h2>
       <p>Tax outcomes shouldn't be left to chance. Book a 90-minute Strategic Tax Consultation and walk away with a practical roadmap for tax planning, asset protection, property investment, business structure and long-term wealth creation.</p>
       <div class="cta-buttons">
-        <a href="/book-sydney" class="btn btn-primary">Book Sydney Consultation (Ershad/Defy) <span class="btn-arrow">→</span></a>
-        <a href="/book-perth" class="btn btn-outline-light">Book Perth Consultation (Lilian/Ershad)</a>
-        <a href="/book-zoom" class="btn btn-outline-light">Book Zoom Session</a>
+        <a href="book-sydney.html" class="btn btn-primary">Book Sydney Consultation <span class="btn-arrow">→</span></a>
+        <a href="book-perth.html" class="btn btn-outline-light">Book Perth Consultation</a>
+        <a href="book-zoom.html" class="btn btn-outline-light">Book Virtual Meeting</a>
       </div>
     </div>
   </div>
@@ -1397,6 +1442,36 @@
     root.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
   } else {
     root.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // Docked booking bar — show when hero-card is out of view AND final CTA is not yet in view
+  if('IntersectionObserver' in window){
+    var heroCard = root.querySelector('.hero-card');
+    var finalCta = root.querySelector('.final-cta');
+    var dockBar  = root.querySelector('.mobile-cta');
+    if(dockBar){
+      var heroVisible = true;
+      var finalVisible = false;
+      var update = function(){
+        if(!heroVisible && !finalVisible){
+          dockBar.classList.add('is-visible');
+        } else {
+          dockBar.classList.remove('is-visible');
+        }
+      };
+      if(heroCard){
+        new IntersectionObserver(function(entries){
+          entries.forEach(function(e){ heroVisible = e.isIntersecting; });
+          update();
+        }, { threshold: 0.05 }).observe(heroCard);
+      }
+      if(finalCta){
+        new IntersectionObserver(function(entries){
+          entries.forEach(function(e){ finalVisible = e.isIntersecting; });
+          update();
+        }, { threshold: 0.15 }).observe(finalCta);
+      }
+    }
   }
 })();
 </script>
