@@ -954,6 +954,108 @@
 }
 .stc-page .cta-buttons .btn{padding:16px 26px}
 
+/* ============================================================
+   CTA MODAL
+   ============================================================ */
+.stc-page .cta-modal{
+  position:fixed;
+  inset:0;
+  z-index:80;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+.stc-page .cta-modal.is-open{display:flex}
+.stc-page .cta-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(26,26,26,.68);
+  backdrop-filter:blur(6px);
+}
+.stc-page .cta-modal-dialog{
+  position:relative;
+  z-index:1;
+  width:min(760px, 100%);
+  max-height:min(90vh, 900px);
+  overflow:auto;
+  background:#1A1A1A;
+  color:#fff;
+  border-radius:20px;
+  box-shadow:0 24px 80px rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.08);
+}
+.stc-page .cta-modal-close{
+  position:absolute;
+  top:16px;
+  right:16px;
+  z-index:2;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:rgba(255,255,255,.10);
+  color:#fff;
+  font-size:1.5rem;
+  line-height:1;
+}
+.stc-page .cta-modal-content{
+  padding:clamp(34px, 5vw, 56px);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.stc-page .cta-modal-content::before{
+  content:"";
+  position:absolute;
+  top:-120px; right:-120px;
+  width:400px; height:400px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(158,109,45,.22), transparent 70%);
+  pointer-events:none;
+}
+.stc-page .cta-modal-content::after{
+  content:"";
+  position:absolute;
+  bottom:-150px; left:-150px;
+  width:500px; height:500px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(158,109,45,.14), transparent 70%);
+  pointer-events:none;
+}
+.stc-page .cta-modal-inner{
+  position:relative;
+  z-index:1;
+  max-width:620px;
+  margin-inline:auto;
+}
+.stc-page .cta-modal .eyebrow{color:#B98948}
+.stc-page .cta-modal h2{color:#fff;margin:14px 0 18px}
+.stc-page .cta-modal h2 .accent{color:#B98948}
+.stc-page .cta-modal p{
+  color:rgba(255,255,255,.78);
+  font-size:clamp(1rem,0.95rem+0.25vw,1.125rem);
+  margin-bottom:36px;
+  max-width:60ch;
+  margin-inline:auto;
+}
+.stc-page .cta-modal .cta-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:center;
+}
+.stc-page .cta-modal .cta-buttons .btn{padding:16px 26px}
+.stc-page .cta-modal-trigger{cursor:pointer}
+.stc-page .cta-modal-trigger:focus-visible{outline:3px solid #B98948;outline-offset:3px}
+
+@media(max-width:560px){
+.stc-page .cta-modal{padding:12px}
+.stc-page .cta-modal-dialog{border-radius:16px}
+.stc-page .cta-modal-content{padding:28px 20px 24px}
+.stc-page .cta-modal .cta-buttons{flex-direction:column;align-items:stretch}
+.stc-page .cta-modal .cta-buttons .btn{width:100%}
+}
+
 /* Mobile bottom padding for sticky CTA */
 @media(max-width:1023px){.stc-page{padding-bottom:74px}}
 
@@ -1018,7 +1120,7 @@
       <h1>The Roadmap to Wealth Protection &amp; Optimization.</h1>
       <p class="lead">Most accounting firms focus on what has already happened. Our 90-minute strategic advisory session looks forward — building a clear tax and wealth roadmap before major decisions are made, for individuals, investors, business owners and SMSF trustees across Sydney, Perth and online.</p>
       <div class="hero-buttons">
-        <a href="#book" class="btn btn-primary">Book Strategic Consultation <span class="btn-arrow">→</span></a>
+        <a href="#book" class="btn btn-primary cta-modal-trigger" data-cta-modal-trigger>Book Strategic Consultation <span class="btn-arrow">→</span></a>
         <a href="#pillars" class="btn btn-outline">Explore the Framework</a>
       </div>
       <div class="hero-trust" aria-label="Service highlights">
@@ -1032,7 +1134,7 @@
       <span class="badge">Begin Here</span>
       <h3>Start Your Strategic Roadmap</h3>
       <p class="desc">Complete the digital fact collection form in 5 minutes — so the full 90-minute session is focused on strategy, not data entry.</p>
-      <a href="#sfc" class="btn btn-primary btn-block">Start My SFC Form <span class="btn-arrow">→</span></a>
+      <a href="#sfc" class="btn btn-primary btn-block cta-modal-trigger" data-cta-modal-trigger>Start My SFC Form <span class="btn-arrow">→</span></a>
       <div class="hero-card-meta">
         <div>Duration<strong>90 min</strong></div>
         <div>Format<strong>In-person · Zoom</strong></div>
@@ -1279,7 +1381,7 @@
         </div>
         <div class="strategist-body">
           <span class="strategist-role">Founder &amp; Lead Tax Strategist</span>
-          <h3>Ershad Ullah</h3>
+          <h3><a href="https://www.investax.com.au/team/ershad" target="_blank" rel="noopener">Ershad Ullah</a></h3>
           <p>Founder of Investax and Managing Director of Camden Professionals. Over 20 years in the Australian tax landscape, specialising in the strategic advice that standard compliance firms often overlook. Has guided thousands of clients through the transition from high-income earners to high-net-worth investors.</p>
         </div>
       </article>
@@ -1291,7 +1393,7 @@
         </div>
         <div class="strategist-body">
           <span class="strategist-role">Non-Executive Partner</span>
-          <h3>Lilian Fisher</h3>
+          <h3><a href="https://www.investax.com.au/team/lilian-fisher" target="_blank" rel="noopener">Lilian Fisher</a></h3>
           <p>Over 20 years of public-practice experience including significant time at Deloitte and other leading advisory firms. Practical advice grounded in strong technical knowledge — supporting Camden Professionals' Perth operation across individuals, business owners and multi-entity groups.</p>
         </div>
       </article>
@@ -1303,14 +1405,14 @@
         </div>
         <div class="strategist-body">
           <span class="strategist-role">Associate Partner</span>
-          <h3>Defy Gunadi</h3>
+          <h3><a href="https://www.investax.com.au/team/defy-gunadi" target="_blank" rel="noopener">Defy Gunadi</a></h3>
           <p>Specialises in translating complex tax rules into practical strategies for property investors, business owners and SMSF clients. Focus on the connection between personal wealth, investment structures and self-managed superannuation.</p>
         </div>
       </article>
     </div>
 
     <div class="center-cta">
-      <a href="/investax-team" class="btn btn-outline">Explore the Full Team <span class="btn-arrow">→</span></a>
+      <a href="https://www.investax.com.au/investax-team" class="btn btn-outline">Explore the Full Team <span class="btn-arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -1405,7 +1507,27 @@
 <!-- Mobile sticky CTA -->
 <div class="mobile-cta" role="complementary" aria-label="Book consultation">
   <div class="mobile-cta-text">Start your roadmap<span>5-min SFC form</span></div>
-  <a href="#sfc" class="btn btn-primary">Complete SFC →</a>
+  <a href="#sfc" class="btn btn-primary cta-modal-trigger" data-cta-modal-trigger>Complete SFC →</a>
+</div>
+
+<!-- CTA modal -->
+<div class="cta-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cta-modal-title">
+  <div class="cta-modal-backdrop" data-cta-modal-close></div>
+  <div class="cta-modal-dialog" role="document">
+    <button type="button" class="cta-modal-close" aria-label="Close modal" data-cta-modal-close>×</button>
+    <div class="cta-modal-content">
+      <div class="cta-modal-inner">
+        <span class="eyebrow">Take Control</span>
+        <h2 id="cta-modal-title">Your <span class="accent">Financial Future</span>, On Paper.</h2>
+        <p>Tax outcomes shouldn't be left to chance. Book a 90-minute Strategic Tax Consultation and walk away with a practical roadmap for tax planning, asset protection, property investment, business structure and long-term wealth creation.</p>
+        <div class="cta-buttons">
+          <a href="book-sydney.html" class="btn btn-primary">Book Sydney Consultation <span class="btn-arrow">→</span></a>
+          <a href="book-perth.html" class="btn btn-outline-light">Book Perth Consultation</a>
+          <a href="book-zoom.html" class="btn btn-outline-light">Book Virtual Meeting</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </main>
 
@@ -1444,34 +1566,92 @@
     root.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }
 
-  // Docked booking bar — show when hero-card is out of view AND final CTA is not yet in view
-  if('IntersectionObserver' in window){
-    var heroCard = root.querySelector('.hero-card');
-    var finalCta = root.querySelector('.final-cta');
-    var dockBar  = root.querySelector('.mobile-cta');
-    if(dockBar){
-      var heroVisible = true;
-      var finalVisible = false;
-      var update = function(){
-        if(!heroVisible && !finalVisible){
-          dockBar.classList.add('is-visible');
-        } else {
-          dockBar.classList.remove('is-visible');
+  // Docked booking bar — show immediately once the user starts scrolling.
+  var dockBar = root.querySelector('.mobile-cta');
+  if(dockBar){
+    var ticking = false;
+    var updateDockBar = function(){
+      ticking = false;
+      if(window.scrollY > 12 || document.documentElement.scrollTop > 12){
+        dockBar.classList.add('is-visible');
+      } else {
+        dockBar.classList.remove('is-visible');
+      }
+    };
+    updateDockBar();
+    window.addEventListener('scroll', function(){
+      if(ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(updateDockBar);
+    }, { passive: true });
+  }
+
+  // CTA modal
+  var modal = root.querySelector('.cta-modal');
+  var modalTriggers = root.querySelectorAll('[data-cta-modal-trigger]');
+  var modalCloseTargets = root.querySelectorAll('[data-cta-modal-close]');
+  var previousFocus = null;
+
+  if(modal && modalTriggers.length){
+    var openModal = function(event){
+      if(event){ event.preventDefault(); }
+      previousFocus = document.activeElement;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      var closeButton = modal.querySelector('.cta-modal-close');
+      if(closeButton){ closeButton.focus(); }
+    };
+
+    var closeModal = function(){
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if(previousFocus && typeof previousFocus.focus === 'function'){
+        previousFocus.focus();
+      }
+    };
+
+    modalTriggers.forEach(function(trigger){
+      trigger.addEventListener('click', openModal);
+      trigger.addEventListener('keydown', function(event){
+        if(event.key === 'Enter' || event.key === ' '){
+          openModal(event);
         }
-      };
-      if(heroCard){
-        new IntersectionObserver(function(entries){
-          entries.forEach(function(e){ heroVisible = e.isIntersecting; });
-          update();
-        }, { threshold: 0.05 }).observe(heroCard);
+      });
+    });
+
+    modalCloseTargets.forEach(function(target){
+      target.addEventListener('click', function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        closeModal();
+      });
+      target.addEventListener('pointerup', function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        closeModal();
+      });
+      target.addEventListener('keydown', function(event){
+        if(event.key === 'Enter' || event.key === ' '){
+          event.preventDefault();
+          event.stopPropagation();
+          closeModal();
+        }
+      });
+    });
+
+    document.addEventListener('keydown', function(event){
+      if(event.key === 'Escape' && modal.classList.contains('is-open')){
+        closeModal();
       }
-      if(finalCta){
-        new IntersectionObserver(function(entries){
-          entries.forEach(function(e){ finalVisible = e.isIntersecting; });
-          update();
-        }, { threshold: 0.15 }).observe(finalCta);
+    });
+
+    modal.addEventListener('click', function(event){
+      if(event.target === modal){
+        closeModal();
       }
-    }
+    });
   }
 })();
 </script>
