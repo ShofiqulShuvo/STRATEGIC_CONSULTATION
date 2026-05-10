@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-AU">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#9E6D2D">
 <title>Welcome — Sydney Strategic Tax Consultation | Investax</title>
-<meta name="description" content="Thank you for booking your Sydney Strategic Tax Consultation with Investax. Complete your 5-minute Strategic Fact Collection (SFC) form to prepare for your 90-minute deep-dive.">
+<meta name="description" content="Thank you for booking your Sydney Strategic Tax Consultation with Investax. Complete your 5-minute Strategic Fact Collection (STC) form to prepare for your 90-minute deep-dive.">
 
 <meta property="og:title" content="Welcome — Sydney Strategic Tax Consultation | Investax">
 <meta property="og:description" content="Your Sydney Strategic Tax Consultation is one step away. Complete the 5-minute fact collection form and we'll prepare your roadmap.">
@@ -46,7 +46,7 @@
   line-height:1.2;
   letter-spacing:-0.015em;
 }
-.stc-page h1{ font-size:2.75rem; font-size:clamp(2rem, 1.2rem + 3vw, 3.5rem); line-height:1.1; letter-spacing:-0.025em; }
+.stc-page h1{ font-size:2.4rem;  line-height:1.1; letter-spacing:-0.025em; }
 .stc-page h2{ font-size:2rem; font-size:clamp(1.625rem, 1.1rem + 2vw, 2.5rem); line-height:1.15; letter-spacing:-0.02em; }
 .stc-page h3{ font-size:1.3rem; font-size:clamp(1.2rem, 0.95rem + 0.8vw, 1.5rem); line-height:1.25; }
 .stc-page h4{ font-size:1.1rem; font-size:clamp(1.0625rem, 0.95rem + 0.4vw, 1.2rem); line-height:1.3; }
@@ -217,7 +217,7 @@
   margin-bottom:14px;
   font-family:'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
-.stc-page .welcome-card h3{margin-bottom:10px}
+.stc-page .welcome-card h3{margin-bottom:10px; font-size: 1.2rem !important;}
 .stc-page .welcome-card .desc{font-size:0.875rem;color:#6B6B6B;margin-bottom:22px;line-height:1.6}
 .stc-page .welcome-card-meta{
   display:grid;
@@ -402,6 +402,34 @@
 .stc-page .welcome-buttons{flex-direction:column;align-items:stretch}
 .stc-page .welcome-buttons .btn{width:100%}
 }
+
+/* ============================================================
+   FINAL TYPOGRAPHY SHIELD
+   Keep last to beat host-level global resets and typography rules.
+   ============================================================ */
+body .stc-page{
+  font-size:16px !important;
+  line-height:1.7 !important;
+}
+body .stc-page h1,
+body .stc-page h2,
+body .stc-page h3,
+body .stc-page h4,
+body .stc-page h5,
+body .stc-page h6,
+body .stc-page p{
+  text-align:inherit !important;
+  text-transform:none !important;
+  text-shadow:none !important;
+}
+body .stc-page h2{
+  font-size:clamp(26px,4vw,40px) !important;
+  line-height:1.15 !important;
+}
+body .stc-page p{
+  font-size:clamp(15px,1.3vw,17px) !important;
+  line-height:1.7 !important;
+}
 </style>
 </head>
 <body>
@@ -414,11 +442,12 @@
   <div class="container welcome-grid">
     <div class="welcome-content">
       <span class="eyebrow">Sydney Strategic Consultation</span>
-      <h1>Thank You — You're One Step From Your <span class="accent">Strategic Roadmap.</span></h1>
-      <p class="lead">Your Sydney Strategic Tax Consultation request has been received. To make sure your 90-minute session is focused on strategy — not data entry — please complete our digital Strategic Fact Collection (SFC) form. It takes about 5 minutes.</p>
+      <h1>Your Sydney Strategic Tax Roadmap <span class="accent">Starts Here</span></h1>
+      <p class="lead">To maximize the impact of your 90-minute strategic deep-dive, please complete your Strategic Tax Consultation (STC) form. This ensures your Sydney Senior Tax Advisor is fully briefed on your goals for tax planning, asset protection, and property strategy before your session begins.</p>
+      <p class="lead">Alternative Option: Most clients prefer our secure 5-minute digital form, but you can also <a href="https://investax.com.au/wp-content/uploads/2025/07/Investax-SFC-Form.pdf" target="_blank" style="color: blue">[Download an Editable PDF STC Form]</a> if you prefer to complete it manually</p>
       <div class="welcome-buttons">
-        <a href="https://forms.investax.com.au/tax-e-checklists/6" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Open My SFC Form <span class="btn-arrow">→</span></a>
-        <a href="https://investax.com.au/wp-content/uploads/2025/07/Investax-SFC-Form.pdf" target="_blank" rel="noopener" class="btn btn-outline">Download Strategic Fact Collection Form</a>
+        <a href="https://forms.investax.com.au/tax-e-checklists/6" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Start My Digital Sydney STC Form <span class="btn-arrow">→</span></a>
+        
       </div>
       <div class="welcome-trust" aria-label="What to expect">
         <div class="trust-item"><span class="trust-check" aria-hidden="true">✓</span> 5-minute online form</div>
@@ -429,14 +458,14 @@
 
     <aside class="welcome-card" aria-label="Your Sydney consultation">
       <span class="badge">Sydney Booking</span>
-      <h3>What You've Booked</h3>
-      <p class="desc">A 90-minute strategic deep-dive with a senior Investax tax strategist — covering tax planning, asset protection, property and SMSF strategy.</p>
-      <a href="https://forms.investax.com.au/tax-e-checklists/6" target="_blank" rel="noopener" class="btn btn-primary btn-block">Start the SFC Form <span class="btn-arrow">→</span></a>
+      <h3>WHAT YOU ARE BOOKING</h3>
+      <p class="desc">A 90-minute strategic deep-dive with a Senior Tax Advisor—covering tax planning, asset protection, property, and SMSF strategy.</p>
+      <a href="https://forms.investax.com.au/tax-e-checklists/6" target="_blank" rel="noopener" class="btn btn-primary btn-block">Start the STC Form <span class="btn-arrow">→</span></a>
       <div class="welcome-card-meta">
         <div>Location<strong>Sydney CBD · In-person or Zoom</strong></div>
         <div>Duration<strong>90 minutes</strong></div>
-        <div>Lead Strategist<strong>Investax Senior Tax Team</strong></div>
-        <div>Next Step<strong>Complete the SFC form</strong></div>
+        <div>Lead Strategist<strong>Your Senior Tax Advisor.</strong></div>
+        <div>Next Step<strong>Complete the Sydney STC form.</strong></div>
       </div>
     </aside>
   </div>
@@ -457,7 +486,7 @@
       <div class="step reveal">
         <div class="step-num">01</div>
         <span class="step-label">Right Now</span>
-        <h3>Complete Your SFC Form</h3>
+        <h3>Complete Your STC Form</h3>
         <p>Open the secure online form and share your income, assets, entities, investments and goals. Most clients finish in under 5 minutes.</p>
       </div>
       <div class="step reveal">
@@ -475,7 +504,7 @@
     </div>
 
     <div class="info-callout reveal">
-      <p><strong>Heads up:</strong> Your SFC submission is what allows our strategists to prepare in advance. Sessions for clients who haven't completed the form may be rescheduled — please complete it as soon as possible.</p>
+      <p><strong>Heads up:</strong> Your STC submission is what allows our strategists to prepare in advance. Sessions for clients who haven't completed the form may be rescheduled — please complete it as soon as possible.</p>
     </div>
   </div>
 </section>
@@ -488,9 +517,9 @@
     <div class="final-cta-inner">
       <span class="eyebrow">Ready When You Are</span>
       <h2>Begin Your <span class="accent">Sydney</span> Roadmap.</h2>
-      <p>The sooner you complete the SFC form, the sooner our team can prepare a tailored agenda for your 90-minute strategic session.</p>
+      <p>The sooner you complete the STC form, the sooner our team can prepare a tailored agenda for your 90-minute strategic session.</p>
       <div class="cta-buttons">
-        <a href="https://forms.investax.com.au/tax-e-checklists/6" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Open My SFC Form <span class="btn-arrow">→</span></a>
+        <a href="https://forms.investax.com.au/tax-e-checklists/6" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Open My STC Form <span class="btn-arrow">→</span></a>
         <a href="https://investax.com.au/wp-content/uploads/2025/07/Investax-SFC-Form.pdf" target="_blank" rel="noopener" class="btn btn-outline-light">Download Strategic Fact Collection Form</a>
       </div>
     </div>
@@ -521,4 +550,3 @@
 
 </body>
 </html>
-

@@ -402,6 +402,34 @@
 .stc-page .welcome-buttons{flex-direction:column;align-items:stretch}
 .stc-page .welcome-buttons .btn{width:100%}
 }
+
+/* ============================================================
+   FINAL TYPOGRAPHY SHIELD
+   Keep last to beat host-level global resets and typography rules.
+   ============================================================ */
+body .stc-page{
+  font-size:16px !important;
+  line-height:1.7 !important;
+}
+body .stc-page h1,
+body .stc-page h2,
+body .stc-page h3,
+body .stc-page h4,
+body .stc-page h5,
+body .stc-page h6,
+body .stc-page p{
+  text-align:inherit !important;
+  text-transform:none !important;
+  text-shadow:none !important;
+}
+body .stc-page h2{
+  font-size:clamp(26px,4vw,40px) !important;
+  line-height:1.15 !important;
+}
+body .stc-page p{
+  font-size:clamp(15px,1.3vw,17px) !important;
+  line-height:1.7 !important;
+}
 </style>
 </head>
 <body>
@@ -521,4 +549,3 @@
 
 </body>
 </html>
-
