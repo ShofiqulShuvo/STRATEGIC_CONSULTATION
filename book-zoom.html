@@ -111,7 +111,16 @@
    WELCOME HERO
    ============================================================ */
 .stc-page .welcome-hero{
-  background:linear-gradient(180deg, #FFF 0%, #F7F4EE 100%);
+  /* Top fade protects white sticky nav text on the live site header. */
+  background:
+    linear-gradient(
+      180deg,
+      rgba(22,22,22,.55) 0px,
+      rgba(22,22,22,.34) 52px,
+      rgba(22,22,22,.12) 100px,
+      rgba(22,22,22,0) 150px
+    ),
+    linear-gradient(180deg, #FFF 0%, #F7F4EE 100%);
   padding:84px 0 72px;
   padding:clamp(56px,9vw,112px) 0 clamp(48px,7vw,88px);
   position:relative;
@@ -441,12 +450,13 @@ body .stc-page p{
 <section class="welcome-hero">
   <div class="container welcome-grid">
     <div class="welcome-content">
-      <span class="eyebrow">Virtual Strategic Consultation</span>
-      <h1>Thank You — You're One Step From Your <span class="accent">Strategic Roadmap.</span></h1>
-      <p class="lead">Your Virtual Strategic Tax Consultation request has been received. To make sure your 90-minute Zoom session is focused on strategy — not data entry — please complete our digital Strategic Fact Collection (SFC) form. It takes about 5 minutes.</p>
+      <span class="eyebrow">Perth Strategic Consultation</span>
+      <h1>Your Virtual Strategic Tax Roadmap <span class="accent">Starts Here</span></h1>
+      <p class="lead">To maximize the impact of your 90-minute secure Zoom deep-dive, please complete your Strategic Tax Consultation (STC) form. This ensures your Senior Tax Advisor is fully briefed on your goals for national tax planning, asset protection, and property strategy—no matter where you are in Australia.</p>
+      <p class="lead">Alternative Option: Most clients prefer our secure 5-minute digital form, but you can also <a href="https://www.investax.com.au/wp-content/uploads/2026/05/Camden-Professionals-SFC-Form.pdf" target="_blank" style="color: blue">[Download an Editable PDF STC Form]</a> if you prefer to complete it manually.</p>
+      
       <div class="welcome-buttons">
-        <a href="https://forms.investax.com.au/tax-e-checklists/6" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Open My SFC Form <span class="btn-arrow">→</span></a>
-        <a href="index.html" class="btn btn-outline">Back to Overview</a>
+        <a href="https://forms.investax.com.au/tax-e-checklists/6" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Start My Virtual STC Form <span class="btn-arrow">→</span></a>
       </div>
       <div class="welcome-trust" aria-label="What to expect">
         <div class="trust-item"><span class="trust-check" aria-hidden="true">✓</span> 5-minute online form</div>
@@ -457,14 +467,14 @@ body .stc-page p{
 
     <aside class="welcome-card" aria-label="Your virtual consultation">
       <span class="badge">Virtual Booking</span>
-      <h3>What You've Booked</h3>
-      <p class="desc">A 90-minute strategic deep-dive on secure Zoom with a senior Investax tax strategist — covering tax planning, asset protection, property and SMSF strategy.</p>
-      <a href="https://forms.investax.com.au/tax-e-checklists/6" target="_blank" rel="noopener" class="btn btn-primary btn-block">Start the SFC Form <span class="btn-arrow">→</span></a>
+      <h3>WHAT YOU ARE BOOKING</h3>
+      <p class="desc">A 90-minute strategic deep-dive on secure Zoom with a Senior Tax Advisor—covering tax planning, asset protection, and property strategy across Australia.</p>
+      <a href="https://forms.investax.com.au/tax-e-checklists/6" target="_blank" rel="noopener" class="btn btn-primary btn-block">Start My Virtual STC Form <span class="btn-arrow">→</span></a>
       <div class="welcome-card-meta">
         <div>Format<strong>Secure Zoom · Anywhere in Australia</strong></div>
         <div>Duration<strong>90 minutes</strong></div>
-        <div>Lead Strategist<strong>Investax Senior Tax Team</strong></div>
-        <div>Next Step<strong>Complete the SFC form</strong></div>
+        <div>Lead Strategist<strong>Your Senior Tax Advisor.</strong></div>
+        <div>Next Step<strong>Complete the Virtual STC form.</strong></div>
       </div>
     </aside>
   </div>
@@ -485,7 +495,7 @@ body .stc-page p{
       <div class="step reveal">
         <div class="step-num">01</div>
         <span class="step-label">Right Now</span>
-        <h3>Complete Your SFC Form</h3>
+        <h3>Complete Your STC Form</h3>
         <p>Open the secure online form and share your income, assets, entities, investments and goals. Most clients finish in under 5 minutes.</p>
       </div>
       <div class="step reveal">
@@ -503,7 +513,7 @@ body .stc-page p{
     </div>
 
     <div class="info-callout reveal">
-      <p><strong>Heads up:</strong> Your SFC submission is what allows our strategists to prepare in advance. Sessions for clients who haven't completed the form may be rescheduled — please complete it as soon as possible.</p>
+      <p><strong>Heads up:</strong> Your STC submission is what allows our strategists to prepare in advance. Sessions for clients who haven't completed the form may be rescheduled — please complete it as soon as possible.</p>
     </div>
   </div>
 </section>
@@ -516,10 +526,10 @@ body .stc-page p{
     <div class="final-cta-inner">
       <span class="eyebrow">Ready When You Are</span>
       <h2>Begin Your <span class="accent">Virtual</span> Roadmap.</h2>
-      <p>The sooner you complete the SFC form, the sooner our team can prepare a tailored agenda for your 90-minute strategic session.</p>
+      <p>The sooner you complete the STC form, the sooner our team can prepare a tailored agenda for your 90-minute strategic session.</p>
       <div class="cta-buttons">
-        <a href="https://forms.investax.com.au/tax-e-checklists/6" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Open My SFC Form <span class="btn-arrow">→</span></a>
-        <a href="index.html" class="btn btn-outline-light">Back to Overview</a>
+        <a href="https://forms.investax.com.au/tax-e-checklists/6" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Start the STC Form <span class="btn-arrow">→</span></a>
+        <a href="https://www.investax.com.au/strategic-tax-consultation-services-australia" class="btn btn-outline-light">Back to Overview</a>
       </div>
     </div>
   </div>
