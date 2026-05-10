@@ -111,7 +111,16 @@
    WELCOME HERO
    ============================================================ */
 .stc-page .welcome-hero{
-  background:linear-gradient(180deg, #FFF 0%, #F7F4EE 100%);
+  /* Top fade protects white sticky nav text on the live site header. */
+  background:
+    linear-gradient(
+      180deg,
+      rgba(22,22,22,.78) 0px,
+      rgba(22,22,22,.52) 56px,
+      rgba(22,22,22,.22) 108px,
+      rgba(22,22,22,0) 170px
+    ),
+    linear-gradient(180deg, #FFF 0%, #F7F4EE 100%);
   padding:84px 0 72px;
   padding:clamp(56px,9vw,112px) 0 clamp(48px,7vw,88px);
   position:relative;
